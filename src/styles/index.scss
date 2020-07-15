@@ -86,8 +86,15 @@ h1, h2, h3, h4 {
 .container {
     // Use vertical padding instead of real width
     // for simpler responsiveness with mobile.
+    position: relative;
     vertical-align: top;
     max-width: $containerMaxWidth - (2 * $containerPaddingX);
     width: 100%;
     padding: 0 $containerPaddingX 0 $containerPaddingX;
+}
+
+.seperator {
+    width: 100%;
+    height: 1px;
+    background-color: $dark-gray;
 }

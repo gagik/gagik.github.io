@@ -1,0 +1,49 @@
+@import '../variables';
+
+.section {
+    padding: 170px 0px 100px 0px;
+}
+
+
+.sectionHeading {
+    margin: 0px;
+}
+
+$cvSpacing: 40px;
+
+.cvSection {
+    margin-bottom: 50px;
+}
+
+.cvItem {
+    position: relative;
+    width: 100%;
+    margin-bottom: $cvSpacing;
+}
+
+.seperator {
+    margin-bottom: $cvSpacing;
+}
+
+.cvItem .heading {
+    font-size: 24px;
+    margin: 0px 0px 5px 0px;
+    width: 600px;
+}
+
+.cvItem .description {
+    font-size: 20px;
+    color: $text-gray;
+}
+
+.cvItem .date {
+    $width: 200px;
+    text-align: right;
+    position: absolute;
+    color: $text-gray;
+    top: 0px;
+    left: 100%;
+    width: $width;
+    margin-left: -$width;
+    font-size: 16px;
+}

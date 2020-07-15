@@ -1,0 +1,36 @@
+@import '../variables';
+$cubesize: 560px;
+$paddingX: 60px;
+$paddingY: 80px;
+
+.section {
+    padding-top: 160px;
+}
+
+.cubes {
+    width: $cubesize;
+    height: $cubesize;
+    position: relative; 
+    margin-top: -20px;
+}
+
+.cube {
+    width: $cubesize - 2*$paddingX;
+    height: $cubesize - 2*$paddingY;
+    padding: $paddingY $paddingX;
+    background: $bg-dark;
+}
+
+.cubeText {
+    position: absolute;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.cubeBack {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    background: $blonde;
+    z-index: 0;
+}

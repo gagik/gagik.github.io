@@ -9,6 +9,7 @@ $imageSpacing: 50px;
 
 .cardsContainer {
     position: relative;
+    margin-top: 220px;
 }
 
 .infoCard, .imageCard {
@@ -37,6 +38,8 @@ $imageSpacing: 50px;
 
 .content span {
     font-size: 20px;
+    line-height: 125%;
+    
 }
 
 // The img in it does not need to be resized

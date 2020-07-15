@@ -4,6 +4,8 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import Intro from '../sections/intro';
 import Projects from '../sections/projects';
+import Resume from '../sections/resume';
+import Contact from '../sections/contact';
 
 const LandingPage = () => {
   const data = useStaticQuery(graphql`
@@ -26,6 +28,8 @@ const LandingPage = () => {
     <Layout>
         <Intro />
         <Projects />
+        <Resume />
+        <Contact />
         {/* <h1>{data.site.siteMetadata.title}</h1>
         <Link to='/blog'>This is blog!!</Link> */}
     </Layout>

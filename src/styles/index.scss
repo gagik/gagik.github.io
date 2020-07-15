@@ -1,0 +1,93 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Gitunik';
+    src: url('../assets/fonts/Gitunik.eot?#iefix') format('embedded-opentype'),  url('../assets/fonts/Gitunik.woff') format('woff'), url('../assets/fonts/Gitunik.ttf')  format('truetype'), url('../assets/fonts/Gitunik.svg#Gitunik') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+
+
+/* ... Global Spacing ... */
+$containerMaxWidth: 1125px; 
+$containerPaddingX: 50px;
+
+
+* {
+    font-family: $font-inter;
+    color: $white;
+    letter-spacing: 0.035em;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: $bg-dark;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#___gatsby, #gatsby-focus-wrapper, .section, .layout {
+    width: 100%;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0 250px 0;
+}
+
+.section-heading h4 {
+    color: $text-gray;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.section.flipped {
+    background: $red;
+}
+
+.section.flipped h4 {
+    color: $black;
+}
+
+
+
+
+.section-heading, .section-content {
+    display: inline-block;
+}
+
+.section-heading {
+    vertical-align: top;
+    width: 33.33%;
+}
+
+.section-content {
+    width: 66.67%;
+}
+
+.container {
+    // Use vertical padding instead of real width
+    // for simpler responsiveness with mobile.
+    vertical-align: top;
+    max-width: $containerMaxWidth - (2 * $containerPaddingX);
+    width: 100%;
+    padding: 0 $containerPaddingX 0 $containerPaddingX;
+}

@@ -1,0 +1,70 @@
+@import '../variables';
+
+$cardWidth: 800px;
+$cardHeight: 500px;
+$contentWidth: 0.5 * $cardWidth;
+
+$cardPaddingLeft: 75px;
+$imageSpacing: 50px;
+
+.cardsContainer {
+    position: relative;
+}
+
+.infoCard, .imageCard {
+    width: $cardWidth;
+    height: $cardHeight;
+}
+
+.infoCard {
+    background: $bg-dark;
+}
+
+.content {
+    width: $contentWidth;
+    padding-top: 100px;
+    padding-left: $cardPaddingLeft;
+    display: flex;
+    align-items: center;
+
+}
+
+.content h1 {
+    font-size: 28px;
+    color: $red;
+    margin-bottom: 58px;
+}
+
+.content span {
+    font-size: 20px;
+}
+
+// The img in it does not need to be resized
+// as it is preprocessed to be 800x540.
+// If resizing this div, this need to change.
+.imageCard {
+    position: absolute;
+    top: -150px;
+    left: $contentWidth + $cardPaddingLeft + $imageSpacing;
+    width:$cardWidth;
+    height:$cardHeight;
+    overflow: hidden;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $cardHeight;
+    background: rgba(0,0,0,0.4);
+}
+
+.letter {
+    position: absolute;
+    top: 140px;
+    left: $contentWidth + $cardPaddingLeft;
+    font-family: $font-gitunik;
+    font-size: 300px;
+    cursor: default;
+}

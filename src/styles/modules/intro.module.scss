@@ -1,0 +1,36 @@
+@import '../variables';
+
+$icon-height: 60px;
+$text-height: 40px;
+
+
+.banner {
+    width: 100%;
+    height: $icon-height;
+    margin-bottom: 150px;
+}
+
+.logoIcon {
+    float: right;
+}
+
+.logoText {
+    margin-top: $icon-height - $text-height;
+    float: left;
+}
+
+.greeting {
+    font-family: $font-gitunik;
+    font-size: 60px;
+    color: $red;
+}
+
+.content {
+    margin-top: -10px;
+}
+
+.introText {
+    width: 460px;
+    font-size: 24px;
+    line-height: 140%;
+}

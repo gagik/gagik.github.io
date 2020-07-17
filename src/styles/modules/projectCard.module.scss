@@ -1,73 +1,84 @@
 @import '../variables';
 
-$cardWidth: 800px;
-$cardHeight: 500px;
-$contentWidth: 0.5 * $cardWidth;
-
 $cardPaddingLeft: 75px;
-$imageSpacing: 50px;
+// Make this calculation more reasonable
+// also, ensure the image size is equivalent
+// to this.
 
-.cardsContainer {
+$imageWidth: 280px;
+$imageHeight: 400px;
+
+$contentPadding: 30px;
+
+// .project.small {
+//     display: inline-block;
+//     width: $imageWidth;
+//     vertical-align: top;
+// }
+
+.project {
     position: relative;
-    margin-top: 220px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0px 0px 40px 0px;
+}
+.project:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
-.infoCard, .imageCard {
-    width: $cardWidth;
-    height: $cardHeight;
+.project:nth-child(even) .content {
+    padding-left: 0px;
+    padding-right: $contentPadding;
 }
 
-.infoCard {
-    background: $bg-dark;
+.project .thumbnail {
+    position: relative;
+    display: inline-block;
+}
+
+.project .content {
+    position: relative;
+    height: auto;
+    padding: 0px 0px $contentPadding $contentPadding;
 }
 
 .content {
-    width: $contentWidth;
-    padding-top: 100px;
-    padding-left: $cardPaddingLeft;
-    display: flex;
-    align-items: center;
-
+    width: 100%;
+    height: 300px;
 }
 
 .content h1 {
-    font-size: 28px;
-    color: $red;
-    margin-bottom: 58px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
-.content span {
-    font-size: 20px;
-    line-height: 125%;
-    
+.content * {
+    color: $black;
 }
 
-// The img in it does not need to be resized
-// as it is preprocessed to be 800x540.
-// If resizing this div, this need to change.
-.imageCard {
+.content .description {
+    line-height: 140%;
+}
+.duotone, .image {
+    width: $imageWidth;
+    height: $imageHeight;
+} 
+
+.image {
+    z-index: 0;
     position: absolute;
-    top: -150px;
-    left: $contentWidth + $cardPaddingLeft + $imageSpacing;
-    width:$cardWidth;
-    height:$cardHeight;
-    overflow: hidden;
+    top:0px;
+    left:0px;
+    opacity: 1;
 }
 
-.shadow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: $cardHeight;
-    background: rgba(0,0,0,0.4);
+.duotone {
+    position: relative;
+    z-index: 100;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.letter {
-    position: absolute;
-    top: 140px;
-    left: $contentWidth + $cardPaddingLeft;
-    font-family: $font-gitunik;
-    font-size: 300px;
-    cursor: default;
+.project:hover .duotone {
+    opacity: 0;
 }

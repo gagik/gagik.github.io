@@ -1,0 +1,38 @@
+@import '../variables';
+
+.footer {
+    padding-bottom: 50px;
+    display: grid;
+    justify-items: center;
+    width: 100%;
+}
+
+.footer * {
+    font-size: 16px;
+}
+
+.footer .logo {
+    margin-bottom: 70px;
+}
+
+.footer.flipped {
+    background: $red;
+}
+
+.footer.flipped * {
+    color: $black;
+}
+
+.footer .left, .footer .right {
+    display: inline-block;
+    width: 50%;
+}
+
+.footer .right {
+    text-align: right;
+}
+
+.footer a {
+    margin-left: 50px;
+    text-decoration: none !important;
+}

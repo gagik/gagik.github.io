@@ -10,3 +10,9 @@ $blonde: #D9C299;
 /* ... Typography ... */
 $font-inter: Inter, sans-serif;
 $font-gitunik: Gitunik, Inter, sans-serif;
+
+/* ... Global Spacing ... */
+$containerMaxWidth: 1125px; 
+$containerPaddingX: 50px;
+/* Useful for some container-based fixed scaling */
+$containerWidth: $containerMaxWidth - 2 * $containerPaddingX;

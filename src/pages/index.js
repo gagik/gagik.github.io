@@ -25,7 +25,7 @@ const LandingPage = () => {
   }
   `);
   return (
-    <Layout>
+    <Layout flipped={true}>
         <Intro />
         <Projects />
         <Resume />

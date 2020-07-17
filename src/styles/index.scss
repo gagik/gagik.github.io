@@ -1,20 +1,16 @@
 @import 'variables';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 @font-face {
     font-family: 'Gitunik';
-    src: url('../assets/fonts/Gitunik.eot?#iefix') format('embedded-opentype'),  url('../assets/fonts/Gitunik.woff') format('woff'), url('../assets/fonts/Gitunik.ttf')  format('truetype'), url('../assets/fonts/Gitunik.svg#Gitunik') format('svg');
+    src: url('../assets/fonts/Gitunik.eot?#iefix') format('embedded-opentype'), 
+         url('../assets/fonts/Gitunik.woff') format('woff'), 
+         url('../assets/fonts/Gitunik.ttf')  format('truetype'), 
+         url('../assets/fonts/Gitunik.svg#Gitunik') format('svg');
     font-weight: normal;
     font-style: normal;
-  }
-  
-
-
-
-/* ... Global Spacing ... */
-$containerMaxWidth: 1125px; 
-$containerPaddingX: 50px;
+}
 
 
 * {
@@ -66,9 +62,6 @@ h1, h2, h3, h4 {
 .section.flipped h4 {
     color: $black;
 }
-
-
-
 
 .section-heading, .section-content {
     display: inline-block;

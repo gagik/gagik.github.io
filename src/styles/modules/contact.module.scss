@@ -2,16 +2,18 @@
 $cubesize: 560px;
 $paddingX: 60px;
 $paddingY: 80px;
+$cardShadow: 80px;
 
 .section {
     padding-top: 160px;
+    padding-bottom: 180px;
 }
 
 .cubes {
     width: $cubesize;
     height: $cubesize;
     position: relative; 
-    margin-top: -20px;
+    margin: -20px 0px $cardShadow 0px;
 }
 
 .cube {
@@ -29,8 +31,8 @@ $paddingY: 80px;
 
 .cubeBack {
     position: absolute;
-    top: 80px;
-    left: 80px;
+    top: $cardShadow;
+    left: $cardShadow;
     background: $blonde;
     z-index: 0;
 }

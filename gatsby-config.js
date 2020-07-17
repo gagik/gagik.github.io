@@ -13,11 +13,16 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = {
   siteMetadata: {
     title: 'Gagik Amaryan',
+    author: 'Gagik Amaryan',
+    links: [
+      ['email', 'https://github.com/gagik/'],
+      ['github', 'https://github.com/gagik/'],
+      ['youtube', 'https://www.youtube.com/c/GagikAmaryan']
+    ]
   },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp', 
-    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,7 +34,8 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: 'qmoyvcam2b9j',
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       }
     },
     {
@@ -38,6 +44,7 @@ module.exports = {
         useMozJpeg: false,
         stripMetadata: true,
         defaultQuality: 75,
+        downloadLocal: true,
       },
     },
 ],

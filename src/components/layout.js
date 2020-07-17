@@ -6,7 +6,7 @@ const Layout = (props) => {
     return (
         <div class="layout">
             {props.children}
-            <Footer />
+            <Footer flipped={props.flipped} />
         </div>
     );
 }

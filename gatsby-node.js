@@ -3,14 +3,14 @@ const path = require('path');
 exports.createPages = ({graphql, actions}) => {
     const {createPage} = actions;
 
-    const blogPost = path.resolve('./src/templates/blog.js');
+    const projectPost = path.resolve('./src/templates/blog.js');
     return graphql(
         `
         {
-          allContentfulPost {
+          allContentfulProject {
             edges {
               node {
-                title
+                name
                 slug
               }
             }
@@ -22,12 +22,12 @@ exports.createPages = ({graphql, actions}) => {
             throw result.errors;
         }
 
-        const posts = result.data.allContentfulPost.edges;
+        const posts = result.data.allContentfulProject.edges;
 
         posts.forEach((post, index) => {
             createPage({
                 path: post.node.slug,
-                component: blogPost,
+                component: projectPost,
                 context: {
                     slug: post.node.slug
                 }

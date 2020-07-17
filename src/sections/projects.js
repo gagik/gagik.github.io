@@ -42,16 +42,26 @@ const Intro = () => {
                   {
                    nodes {
                     longName
-                    letter
+                    big
                     description {
                         description
                     }
                     thumbnail {
-                        fixed(
-                            width: 800, height: 540
-                        ) {
-                        ...GatsbyContentfulFixed
+                        localFile {
+                            childImageSharp {
+                                duotone: fixed(
+                                    width: 280, height: 400,
+                                    duotone: { highlight: "#D9C299", shadow: "#1A1D1C"}
+                                ) {
+                                ...GatsbyImageSharpFixed
+                                }
+                                image: fixed(
+                                    width: 280, height: 400
+                                ) {
+                                ...GatsbyImageSharpFixed
+                                }
                         }
+                    }
                   }
                 } 
               }
@@ -62,7 +72,9 @@ const Intro = () => {
         title={node.longName}
         letter={node.letter}
         description={node.description.description}
-        image={node.thumbnail.fixed}
+        duotone={node.thumbnail.localFile.childImageSharp.duotone}
+        image={node.thumbnail.localFile.childImageSharp.image}
+        big={node.big}
     />);
     return (
         <Section className={style.section + " flipped"}>
@@ -72,7 +84,9 @@ const Intro = () => {
                 </div>
                 <div className={style.content + " section-content"}>
                     <h4>{pageInfo.projectIntro}</h4>
+                    <div className={style.projects}>
                     {projects}
+                    </div>
                 </div>
             </div>
         </Section>

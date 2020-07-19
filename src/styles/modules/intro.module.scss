@@ -3,6 +3,10 @@
 $icon-height: 60px;
 $text-height: 40px;
 
+.section {
+    position: relative;
+    width: 100%;
+}
 
 .banner {
     width: 100%;
@@ -33,4 +37,14 @@ $text-height: 40px;
     width: 460px;
     font-size: 24px;
     line-height: 140%;
+}
+
+.shapes {
+    $animationCompleteX: -500px;
+    $animationCompleteY: -612px;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: $animationCompleteX;
+    margin-top: $animationCompleteY/2;
 }

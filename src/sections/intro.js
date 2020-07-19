@@ -6,6 +6,7 @@ import style from '../styles/modules/intro.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import IntroShapes from '../components/introShapes';
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => <p className="align-center">{children}</p>
@@ -41,6 +42,7 @@ const Intro = () => {
     `).allContentfulIntro.nodes[0];
     return (
         <Section className={style.section}>
+            <IntroShapes className={style.shapes} />
             <div className="container">
                 <div className={style.banner}>
                     <img className={style.logoIcon} height="60px" src={logoIcon} />

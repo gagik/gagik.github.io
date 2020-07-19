@@ -50,7 +50,7 @@ const Intro = () => {
                         localFile {
                             childImageSharp {
                                 duotone: fixed(
-                                    width: 280, height: 400,
+                                    width: 284, height: 404,
                                     duotone: { highlight: "#D9C299", shadow: "#1A1D1C"}
                                 ) {
                                 ...GatsbyImageSharpFixed

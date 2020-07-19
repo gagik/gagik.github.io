@@ -3,6 +3,7 @@ import style from '../styles/modules/footer.module.scss';
 import icon from '../assets/logo/icon_black.svg';
 import { useStaticQuery } from 'gatsby';
 
+
 const Footer = (props) => {
     const data = useStaticQuery(graphql`
     query {

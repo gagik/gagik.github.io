@@ -63,6 +63,7 @@ $contentPadding: 30px;
 .duotone, .image {
     width: $imageWidth;
     height: $imageHeight;
+    overflow: hidden;
 } 
 
 .image {
@@ -79,6 +80,14 @@ $contentPadding: 30px;
     transition: opacity 0.3s ease-in-out;
 }
 
+.duotone img {
+    margin: -2px 0px 0px -2px;
+}
+
 .project:hover .duotone {
     opacity: 0;
+}
+
+.project:hover h1 {
+    font-weight: $red;
 }

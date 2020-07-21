@@ -1,37 +1,20 @@
 import React from 'react';
-import {Link, graphql, useStaticQuery} from 'gatsby';
-import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import Intro from '../sections/intro';
 import Projects from '../sections/projects';
 import Resume from '../sections/resume';
 import Contact from '../sections/contact';
+import Intro from '../sections/intro';
 
 const LandingPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      logotext: file(relativePath: { eq: "logo/text.png" }) {
-      		childImageSharp {
-            fixed(width: 110) {
-              ...GatsbyImageSharpFixed_tracedSVG
-            }
-          }
-      }
-  }
-  `);
   return (
     <Layout flipped={true}>
+        <div className="disclaimer">
+            <span><b>Note:</b> I just revamped my website and it is still being "tested" by users like you. I am eager to hear feedback!</span>
+        </div>
         <Intro />
         <Projects />
         <Resume />
         <Contact />
-        {/* <h1>{data.site.siteMetadata.title}</h1>
-        <Link to='/blog'>This is blog!!</Link> */}
     </Layout>
   );
 };

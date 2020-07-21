@@ -91,3 +91,15 @@ $contentPadding: 30px;
 .project:hover h1 {
     font-weight: $red;
 }
+
+@include mobile {
+    .duotone {
+        opacity: 0;
+    }
+    .thumbnail img {
+        width: 200px !important;
+    }
+    .thumbnail {
+        width: 200px;
+    }
+}

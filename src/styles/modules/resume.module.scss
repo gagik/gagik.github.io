@@ -2,6 +2,7 @@
 
 .section {
     padding: 170px 0px 100px 0px;
+    min-height: 100%;
 }
 
 
@@ -46,4 +47,15 @@ $cvSpacing: 40px;
     width: $width;
     margin-left: -$width;
     font-size: 16px;
+}
+
+@include mobile {
+    .cvItem .heading, .cvItem .description {
+        padding: 0px $mobilePaddingX;
+        width: 100%;
+    }
+    .cvItem .date {
+        position: relative;
+        margin-top: 15px;
+    }
 }

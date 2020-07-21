@@ -2,10 +2,12 @@
 
 $icon-height: 60px;
 $text-height: 40px;
+$text-width:  460px;
 
 .section {
     position: relative;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .banner {
@@ -24,6 +26,7 @@ $text-height: 40px;
 }
 
 .greeting {
+    width: $text-width;
     font-family: $font-gitunik;
     font-size: 60px;
     color: $red;
@@ -34,12 +37,14 @@ $text-height: 40px;
 }
 
 .introText {
-    width: 460px;
+    width: $text-width;
     font-size: 24px;
     line-height: 140%;
 }
 
 .shapes {
+    /* Width and heigth after 
+       Intro Animation is completed. */
     $animationCompleteX: -500px;
     $animationCompleteY: -612px;
     position: absolute;
@@ -47,4 +52,33 @@ $text-height: 40px;
     left: 100%;
     margin-left: $animationCompleteX;
     margin-top: $animationCompleteY/2;
+}
+
+// Add semi-transperent background for 
+// mobile-friendliness
+@include nondesktop {
+    .content, .banner {
+        position: relative;
+        z-index: 10;
+    }
+    $paddingX: 2 * $mobilePaddingX;
+    .logoText {
+        margin-left: $paddingX;
+    }
+    .logoIcon {
+        margin-right: $paddingX;
+    }
+    .greeting, .introText p {
+        padding: 0px $paddingX;
+    }
+    .section::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: $bg-dark-semi;
+        z-index: 0;
+    }
 }

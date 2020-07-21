@@ -2,25 +2,9 @@ import React from 'react';
 import Section from '../components/section';
 import style from '../styles/modules/projects.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ProjectCard from '../components/projectCard';
+import ScrollableTriangle from '../components/scrollableTriangle';
 
-const Bold = ({ children }) => <span className="bold">{children}</span>
-const Text = ({ children }) => <p className="align-center">{children}</p>
-
-const richText_render = {
-    renderMark: {
-      [MARKS.BOLD]: text => <Bold>{text}</Bold>,
-    },
-    renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-      [BLOCKS.EMBEDDED_ASSET]: (node) => <img class="img-fluid" src={node.data.target.fields.file['en-US'].url} />
-    },
-    // TODO: Consider replacing with a less "hacky" 
-    // solution if later Contentful builds allow.
-    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
-}
 
 const Intro = () => {
     let data = useStaticQuery(graphql`
@@ -43,6 +27,7 @@ const Intro = () => {
                    nodes {
                     longName
                     big
+                    slug
                     description {
                         description
                     }
@@ -68,19 +53,21 @@ const Intro = () => {
     }
     `);
     const pageInfo = data.pageInfo.nodes[0];
-    const projects = data.projects.nodes.map((node) => <ProjectCard 
+    const projects = data.projects.nodes.map((node, i) => <ProjectCard 
         title={node.longName}
         letter={node.letter}
         description={node.description.description}
         duotone={node.thumbnail.localFile.childImageSharp.duotone}
         image={node.thumbnail.localFile.childImageSharp.image}
         big={node.big}
+        key={i}
     />);
     return (
         <Section className={style.section + " flipped"}>
             <div className="container">
-                <div className="section-heading">
+                <div className={style.sHeading + " section-heading"}>
                     <h4>projects</h4>
+                    <ScrollableTriangle className={style.triangle} />
                 </div>
                 <div className={style.content + " section-content"}>
                     <h4>{pageInfo.projectIntro}</h4>

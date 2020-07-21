@@ -36,3 +36,17 @@
     margin-left: 50px;
     text-decoration: none !important;
 }
+
+@include mobile {
+    .footer .right, .footer .left {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .footer .left {
+        padding-bottom: 30px;
+    }
+    .footer .right a {
+        margin: 25px;
+    }
+}

@@ -36,3 +36,15 @@ $cardShadow: 80px;
     background: $blonde;
     z-index: 0;
 }
+
+@include mobile {
+    .cubeText p {
+        padding:0px 40px;
+    }
+    .cubes {
+        margin: 0px 0px $cardShadow 0px;
+    }
+    .cube {
+        padding: $paddingY 0px;
+    }
+}

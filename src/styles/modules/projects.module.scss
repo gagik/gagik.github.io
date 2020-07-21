@@ -1,7 +1,7 @@
 @import '../variables';
 
 .section {
-    padding: 170px 0px 250px 0px;
+    padding: 170px 0px 0px 0px;
     background: $blonde !important;
 }
 
@@ -9,6 +9,9 @@
     color: $black;
 }
 
+.content {
+    padding-bottom: 250px;
+}
 
 .content h4 {
     font-weight: normal;
@@ -21,4 +24,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.triangle {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    left: -50px;
+}
+
+.triangle svg {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.sHeading {
+    height: 100%;
 }

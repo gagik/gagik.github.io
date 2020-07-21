@@ -4,7 +4,7 @@ import '../styles/index.scss'
 
 const Layout = (props) => {
     return (
-        <div class="layout">
+        <div className="layout">
             {props.children}
             <Footer flipped={props.flipped} />
         </div>

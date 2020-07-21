@@ -12,12 +12,11 @@ const richText_render = {
       [MARKS.BOLD]: text => <Bold>{text}</Bold>,
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (_, children) => <p>{children}</p>,
-      [BLOCKS.EMBEDDED_ASSET]: (node) => <img class="img-fluid" src={node.data.target.fields.file['en-US'].url} />
+      [BLOCKS.PARAGRAPH]: (_, children) => <p>{children}</p>
     },
     // TODO: Consider replacing with a less "hacky" 
     // solution if later Contentful builds allow.
-    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
+    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br key={i} />, text])
 }
 
 const Contact = () => {

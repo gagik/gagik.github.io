@@ -10,6 +10,7 @@ const Bold = ({ children }) => <span className="bold">{children}</span>
 const richText_render = {
     renderMark: {
       [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+      [MARKS.CODE]: _ => <span>me<span className="none">nope</span>@<span className="none">away</span>gagik.co</span>,
     },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (_, children) => <p>{children}</p>

@@ -15,8 +15,13 @@ const ProjectCard = (props) => {
                 </div>
                 </div>
                 <div className={style.content}>
-                    <h1>{props.title}</h1>
-                    <span>{props.description}</span>
+                    <div>
+                        <h1>{props.title}</h1>
+                        <span>{props.description}</span>
+                        <div className={style.actionWrapper}>
+                            <div className={style.action}>Learn More</div>
+                        </div>
+                    </div>
                 </div>
         </div>  
     );

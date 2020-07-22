@@ -29,6 +29,25 @@ $cardShadow: 80px;
     z-index: 1;
 }
 
+.cubeText u, .cubeText u * {
+    color: $blonde;
+}
+
+.cubeText a {
+    $color: $blonde;
+    color: $color;
+    border-bottom: 1px solid $color;
+    text-decoration: none;
+    transition: 0.1s ease-in;
+}
+
+.cubeText a:hover {
+    $color: $red;
+    color: $color;
+    border-bottom: 1px solid $color;
+}
+
+
 .cubeBack {
     position: absolute;
     top: $cardShadow;

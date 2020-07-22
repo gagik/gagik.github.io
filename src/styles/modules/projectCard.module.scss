@@ -39,7 +39,9 @@ $contentPadding: 30px;
 
 .project .content {
     position: relative;
-    height: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
     padding: 0px 0px $contentPadding $contentPadding;
 }
 
@@ -61,9 +63,9 @@ $contentPadding: 30px;
     line-height: 140%;
 }
 .duotone, .image {
+    overflow: hidden;
     width: $imageWidth;
     height: $imageHeight;
-    overflow: hidden;
 } 
 
 .image {
@@ -91,6 +93,45 @@ $contentPadding: 30px;
 .project:hover h1 {
     font-weight: $red;
 }
+$actionWidth: 160px;
+$actionHeight: 50px;
+
+.actionWrapper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: $actionWidth;
+    height: $actionHeight;
+    margin-left: -$actionWidth/2;
+    margin-top: -$actionHeight - 50px;
+    overflow: hidden;
+}
+
+.action {
+    width: $actionWidth;
+    height: $actionHeight;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: $actionHeight;
+
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $blonde;
+    background: $bg-dark;
+    transition: transform 0.15s ease-in, color 0.2s ease-in;
+    // transition: color 0.2s ease-in;
+    transform: translateY(100%);
+}
+
+.action:hover {
+    color: $white;
+}
+
+.project:hover .action {
+    transform: translateY(0%);
+}
 
 @include mobile {
     .duotone {
@@ -101,5 +142,12 @@ $contentPadding: 30px;
     }
     .thumbnail {
         width: 200px;
+    }
+    .actionWrapper {
+        position: static;
+        margin: 30px 0px;
+    }
+    .action, .project:hover .action {
+        transform: translateY(0%);
     }
 }

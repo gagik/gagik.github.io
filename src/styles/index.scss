@@ -44,6 +44,7 @@ h1, h2, h3, h4 {
 }
 
 .section {
+    position: relative;
     display: flex;
     justify-content: center;
     padding: 70px 0 250px 0;

@@ -6,10 +6,10 @@ import CvItem from '../components/cvItem';
 const Resume = () => {
     return (
         <Section className={style.section}>
-            <div className="container">
+            <div className={"container " + style.container}>
                 <div className={style.cvSection}>
-                <div className="section-heading">
-                    <h4 className={style.sectionHeading}>experience</h4>
+                <div className={"section-heading " + style.sectionHeading}>
+                    <h4>experience</h4>
                 </div>
                     <div className="section-content">
                     <CvItem 
@@ -28,8 +28,8 @@ const Resume = () => {
                 </div>
                 </div>
                 <div className={style.cvSection}>
-                    <div className="section-heading">
-                        <h4 className={style.sectionHeading}>awards</h4>
+                    <div className={"section-heading " + style.sectionHeading}>
+                        <h4>awards</h4>
                     </div>
                     <div className="section-content">
                         <CvItem 
@@ -49,6 +49,11 @@ const Resume = () => {
                         />
                     </div>
                 </div>
+            </div>
+            <div className={style.shapes}>
+                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="200" r="195" stroke="#C03226" stroke-width="10" stroke-dasharray="50"/>
+                </svg>
             </div>
         </Section>
     );

@@ -36,7 +36,7 @@ const Contact = () => {
         <Section className={style.section + " flipped"}>
             <div className="container">
                 <div className="section-heading">
-                    <h4>start</h4>
+                    <h4>contact</h4>
                 </div>
                 <div className="section-content">
                     <div className={style.cubes}>

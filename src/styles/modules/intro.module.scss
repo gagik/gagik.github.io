@@ -60,6 +60,7 @@ $text-width:  460px;
     .content, .banner {
         position: relative;
         z-index: 10;
+        width: 100%;
     }
     $paddingX: 2 * $mobilePaddingX;
     .logoText {
@@ -68,7 +69,13 @@ $text-width:  460px;
     .logoIcon {
         margin-right: $paddingX;
     }
-    .greeting, .introText p {
+    .introText {
+        width: 100%;
+        padding: $paddingX;
+        box-sizing: border-box;
+    }
+    .greeting {
+        width: 100%;
         padding: 0px $paddingX;
     }
     .section::after {

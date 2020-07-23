@@ -13,14 +13,18 @@ const SEO = ({ title, description, image, article }) => {
     titleTemplate,
     defaultDescription,
     siteUrl,
-    defaultImage,
+    // defaultImage,
     twitterUsername,
   } = site.siteMetadata
 
+  // Temporary solution to a Facebook og:image issue.
+  const defaultImage = "http://i.imgur.com/lcaIMPN.jpg";
+
   const seo = {
-    title: title || defaultTitle,
+    title: (title || defaultTitle),
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
+    // image: `${siteUrl}${image || defaultImage}`,
+    image: !image ? defaultImage : `${siteUrl + image}`,
     url: `${siteUrl}${pathname}`,
   }
 
@@ -33,7 +37,7 @@ const SEO = ({ title, description, image, article }) => {
 
       {(article ? true : null) && <meta property="og:type" content="article" />}
 
-      {seo.title && <meta property="og:title" content={seo.title} />}
+      {seo.title && <meta property="og:title" content={seo.title + ' - Gagik Amaryan'} />}
 
       {seo.description && (
         <meta property="og:description" content={seo.description} />
@@ -47,7 +51,7 @@ const SEO = ({ title, description, image, article }) => {
         <meta name="twitter:creator" content={twitterUsername} />
       )}
 
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
+      {seo.title && <meta name="twitter:title" content={seo.title + ' - Gagik Amaryan'} />}
 
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />

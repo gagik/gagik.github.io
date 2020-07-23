@@ -9,7 +9,9 @@ import SEO from '../components/SEO';
 const LandingPage = () => {
   return (
     <Layout flipped={true}>
-        <SEO />
+        <SEO 
+          title="Home"
+        />
         <Intro />
         <Projects />
         <Resume />

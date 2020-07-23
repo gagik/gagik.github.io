@@ -5,6 +5,7 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import style from '../styles/modules/projectPage.module.scss';
 import Img from 'gatsby-image';
+import SEO from '../components/SEO';
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => <p className="align-center">{children}</p>
@@ -56,6 +57,11 @@ class ProjectPage extends React.Component {
         const thumbnail = post.thumbnail.localFile.childImageSharp.fluid;
         return (
             <Layout>
+                <SEO
+                    title={post.name}
+                    description={post.description.description}
+                    image={thumbnail.src}
+                />
                 <div className={style.post}>
                     <div className={"container " + style.container}>
                         <h1>{post.name}</h1>
@@ -65,9 +71,9 @@ class ProjectPage extends React.Component {
                             {documentToReactComponents(post.content?.json, richText_render)}
                         </div>
                         <Link to="/#projects">
-                        <a className="btn">
-                            See more projects
-                        </a>
+                            <span className="btn">
+                                See more projects
+                            </span>
                         </Link>
                     </div>
                 </div>

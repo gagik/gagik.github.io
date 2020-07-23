@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
+    "deploy": "env-cmd -f .env.development gatsby build --prefix-paths && gh-pages -d public",
     "build": "gatsby build",
     "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
@@ -27,10 +28,12 @@
     "gatsby-transformer-sharp": "^2.5.11",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
+    "gh-pages": "^3.1.0",
     "prettier": "2.0.5"
   },
   "repository": {

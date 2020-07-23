@@ -4,10 +4,12 @@ import Projects from '../sections/projects';
 import Resume from '../sections/resume';
 import Contact from '../sections/contact';
 import Intro from '../sections/intro';
+import SEO from '../components/SEO';
 
 const LandingPage = () => {
   return (
     <Layout flipped={true}>
+        <SEO />
         <Intro />
         <Projects />
         <Resume />

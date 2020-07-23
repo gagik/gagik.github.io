@@ -13,7 +13,13 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = {
   siteMetadata: {
     title: 'Gagik Amaryan',
+    titleTemplate: '%s - Gagik Amaryan',
+    description: 
+      'I combine art, design, and technology to make cool and meaningful projects.',
+    url: 'https://www.gagikamaryan.com',
+    image: "/thumbnail.jpg",
     author: 'Gagik Amaryan',
+    twitterUsername: "@gagikamaryan_",
     links: [
       ['email', 'https://github.com/gagik/'],
       ['github', 'https://github.com/gagik/'],

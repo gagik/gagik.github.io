@@ -1,7 +1,8 @@
 import React from 'react';
 import anime from 'animejs';
 
-const MAX_SVG_HEIGHT = 70;
+let MAX_SVG_HEIGHT = 70;
+const TOP_MARGIN = 40;
 
 class ScrollableTriangle extends React.Component {
     constructor(props) {
@@ -10,10 +11,10 @@ class ScrollableTriangle extends React.Component {
         this.triangleSVG = React.createRef();
         this.state = {svgHeight: MAX_SVG_HEIGHT};
         this.heightEndpoint = MAX_SVG_HEIGHT;
+        MAX_SVG_HEIGHT = !props.amount ? MAX_SVG_HEIGHT : 12 * props.amount + TOP_MARGIN;
     }
     getPath(svgHeight) {
         const BOTTOM = MAX_SVG_HEIGHT;
-        const TOP_MARGIN = 33;
         // Width & height of the big triangle
         const WIDTH = 6;
         const HEIGHT = BOTTOM - Math.floor(svgHeight) + TOP_MARGIN;
@@ -44,14 +45,18 @@ class ScrollableTriangle extends React.Component {
         return path; 
     }
     componentDidMount() {
-        window.addEventListener('scroll', (e) => {this.handleScroll(e,  this);});
+        window.addEventListener('scroll', () => {this.handleScroll()});
     }
     componentWillUnmount() {
-        window.removeEventListener('scroll', (e) => {this.handleScroll(e, this)});
+        window.removeEventListener('scroll', () => {this.handleScroll()});
     }
-    handleScroll(_, target) {
+    handleScroll(_) {
         if (window === undefined) return;
+        let target = this;
         const triangle = target.triangleSVG.current;
+        if(!triangle) {
+            return
+        }
 
         const scrollY = window.scrollY;
 
@@ -75,7 +80,7 @@ class ScrollableTriangle extends React.Component {
         //   svgHeight: newHeight
         // });
         console.log(target.heightEndpoint, newHeight, target.heightEndpoint - newHeight >= 0.1);
-        if(Math.abs(target.heightEndpoint - newHeight) >= 1 && newHeight != 0) {
+        if(Math.abs(target.heightEndpoint - newHeight) >= 1 && newHeight !== 0) {
             anime({
                 targets: "#contact_triangle",
                 d: target.getPath(newHeight),

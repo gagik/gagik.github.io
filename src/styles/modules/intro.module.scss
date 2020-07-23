@@ -1,29 +1,14 @@
 @import '../variables';
 
-$icon-height: 60px;
-$text-height: 40px;
-$text-width:  460px;
-
 .section {
     position: relative;
     width: 100%;
     flex-wrap: wrap;
+    padding-top: 50px;
 }
 
-.banner {
-    width: 100%;
-    height: $icon-height;
-    margin-bottom: 150px;
-}
 
-.logoIcon {
-    float: right;
-}
-
-.logoText {
-    margin-top: $icon-height - $text-height;
-    float: left;
-}
+$text-width:  460px;
 
 .greeting {
     width: $text-width;

@@ -43,6 +43,66 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
+$icon-height: 60px;
+$text-height: 40px;
+$text-width:  460px;
+
+.banner {
+    width: 100%;
+    height: $icon-height;
+    display: flex;
+    justify-content: center;
+    padding: 70px 0px 100px 0px;
+}
+
+.logoIcon {
+    float: right;
+}
+
+.logoText {
+    margin-top: $icon-height - $text-height;
+    float: left;
+}
+
+$btnBorderY: 18px;
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: none;
+    background: $blonde;
+    color: $black;
+    padding: 0px 40px;
+}
+
+
+.btn:before, .btn:after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 100%;
+    border-bottom: $btnBorderY solid $blonde;
+    border-left: $btnBorderY solid transparent;
+}
+.btn:after {
+    bottom: auto;
+    top: 100%;
+    border: $btnBorderY solid $blonde;
+    border-left: none;
+    border-bottom: none;
+    border-right: $btnBorderY solid transparent;
+    border-top: $btnBorderY solid $blonde;
+}
+
+
 .section {
     position: relative;
     display: flex;
@@ -121,4 +181,9 @@ h1, h2, h3, h4 {
 
 .none {
     display: none;
+}
+.img-fluid {
+    width: 100%;
+    margin: 10px 0px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
 }

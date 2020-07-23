@@ -1,7 +1,7 @@
 @import '../variables';
 
 .footer {
-    padding-bottom: 50px;
+    padding: 150px 0px 50px 0px;
     display: grid;
     justify-items: center;
     width: 100%;
@@ -9,6 +9,11 @@
 
 .footer * {
     font-size: 16px;
+    color: $text-gray;
+}
+
+.footer *:hover {
+    color: $blonde;
 }
 
 .footer .logo {

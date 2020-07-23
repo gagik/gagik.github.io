@@ -1,7 +1,6 @@
 import React from 'react';
-import '../styles/index.scss'
 
-const Layout = (props) => {
+const Section = (props) => {
     return (
         <div className={props.className + ' section'}>
             {props.children}
@@ -9,4 +8,4 @@ const Layout = (props) => {
     );
 }
 
-export default Layout;
+export default Section;

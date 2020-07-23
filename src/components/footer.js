@@ -1,6 +1,7 @@
 import React from 'react';
 import style from '../styles/modules/footer.module.scss';
-import icon from '../assets/logo/icon_black.svg';
+import icon_black from '../assets/logo/icon_black.svg';
+import icon_white from '../assets/logo/icon_white.svg';
 import { graphql, useStaticQuery } from 'gatsby';
 
 
@@ -16,6 +17,8 @@ const Footer = (props) => {
     }
     `).site.siteMetadata;
 
+    const icon = props.flipped ? icon_black : icon_white;
+
     const links = data.links.map((link, i) => (
         <a key={i} href={link[1]}>{link[0]}</a>
     ));
@@ -23,7 +26,7 @@ const Footer = (props) => {
     return (
         <div className={style.footer + flipped}>
             <div className={style.logo}>
-                <img alt="Logo Icon" height="85px" src={icon}></img>
+                <img alt="Logo Icon" height="80px" src={icon}></img>
             </div>
             <div className="container">
             <div className={style.left}>

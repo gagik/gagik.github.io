@@ -1,6 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import style from '../styles/modules/projectCard.module.scss';
+import { Link } from 'gatsby';
 
 const ProjectCard = (props) => {
     const bigger = props.big ? " " + style.big : "";
@@ -19,7 +20,7 @@ const ProjectCard = (props) => {
                         <h1>{props.title}</h1>
                         <span>{props.description}</span>
                         <div className={style.actionWrapper}>
-                            <div className={style.action}>Learn More</div>
+                            <Link to={"/" + props.slug}><div className={style.action}>Learn More</div></Link>
                         </div>
                     </div>
                 </div>

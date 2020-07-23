@@ -31,7 +31,7 @@ const Intro = () => {
                     description {
                         description
                     }
-                    thumbnail {
+                    banner {
                         localFile {
                             childImageSharp {
                                 duotone: fixed(
@@ -57,17 +57,18 @@ const Intro = () => {
         title={node.longName}
         letter={node.letter}
         description={node.description.description}
-        duotone={node.thumbnail.localFile.childImageSharp.duotone}
-        image={node.thumbnail.localFile.childImageSharp.image}
+        duotone={node.banner.localFile.childImageSharp.duotone}
+        image={node.banner.localFile.childImageSharp.image}
+        slug={node.slug}
         big={node.big}
         key={i}
     />);
     return (
         <Section className={style.section + " flipped"}>
-            <div className="container">
+            <div id="projects" className="container">
                 <div className={style.sHeading + " section-heading"}>
                     <h4>projects</h4>
-                    <ScrollableTriangle className={style.triangle} />
+                    <ScrollableTriangle amount={data.projects.nodes.length} className={style.triangle} />
                 </div>
                 <div className={style.content + " section-content"}>
                     <h4>{pageInfo.projectIntro}</h4>

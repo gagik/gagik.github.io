@@ -1,7 +1,5 @@
 import React from 'react';
 import Section from '../components/section';
-import logoIcon from '../assets/logo/icon.svg';
-import logoText from '../assets/logo/text.svg';
 import style from '../styles/modules/intro.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
@@ -44,10 +42,6 @@ const Intro = () => {
         <Section className={style.section}>
             <IntroShapes className={style.shapes} />
             <div className="container">
-                <div className={style.banner}>
-                    <img alt="Logo Icon" className={style.logoIcon} height="60px" src={logoIcon} />
-                    <img alt="Logo Text" className={style.logoText} height="40px" src={logoText} />
-                </div>
                 <div className="section-heading">
                     <h4>start</h4>
                 </div>

@@ -17,8 +17,7 @@ const richText_render = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        console.log(node);
-        return <img alt="" class="img-fluid" src={node.data.target.fields.file['en-US'].url} />
+        return <img alt="" className="img-fluid" src={node.data.target.fields.file['en-US'].url} />
     }
   },
 }

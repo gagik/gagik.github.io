@@ -34,7 +34,7 @@ const Contact = () => {
     `).allContentfulIntro.nodes[0];
     return (
         <Section className={style.section + " flipped"}>
-            <div className="container">
+            <div className={style.container + " container"}>
                 <div className="section-heading">
                     <h4>contact</h4>
                 </div>

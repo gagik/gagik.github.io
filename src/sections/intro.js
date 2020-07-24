@@ -15,7 +15,7 @@ const richText_render = {
     },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-      [BLOCKS.EMBEDDED_ASSET]: (node) => <img alt="Project" class="img-fluid" src={node.data.target.fields.file['en-US'].url} />
+      [BLOCKS.EMBEDDED_ASSET]: (node) => <img alt="Project" className="img-fluid" src={node.data.target.fields.file['en-US'].url} />
     },
     // TODO: Consider replacing with a less "hacky" 
     // solution if later Contentful builds allow.
@@ -42,7 +42,7 @@ const Intro = () => {
         <Section className={style.section}>
             <IntroShapes className={style.shapes} />
             <div className="container">
-                <div className="section-heading">
+                <div className={"section-heading " + style.sectionHeading}>
                     <h4>start</h4>
                 </div>
                 <div className={style.content + " section-content"}>

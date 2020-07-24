@@ -10,12 +10,6 @@ $imageHeight: 400px;
 
 $contentPadding: 30px;
 
-// .project.small {
-//     display: inline-block;
-//     width: $imageWidth;
-//     vertical-align: top;
-// }
-
 .project {
     position: relative;
     display: flex;
@@ -135,13 +129,7 @@ $actionHeight: 50px;
 
 @include mobile {
     .duotone {
-        opacity: 0;
-    }
-    .thumbnail img {
-        width: 200px !important;
-    }
-    .thumbnail {
-        width: 200px;
+        display: none;
     }
     .actionWrapper {
         position: static;
@@ -149,5 +137,33 @@ $actionHeight: 50px;
     }
     .action, .project:hover .action {
         transform: translateY(0%);
+    }
+    .action {
+        color: $white;
+    }
+    .project .thumbnail {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .project {
+        display: inline-block;
+        width: 100%;
+        margin: 0px;
+        vertical-align: top;
+        padding-top: 50px;
+    }
+    .project .content {
+        display: flex;
+        height: auto;
+        justify-content: center;
+        width: 100%;
+        padding: 0px !important;
+    }
+    .project .content div {
+        width: $imageWidth;
+    }
+    .image {
+        position: static;
     }
 }

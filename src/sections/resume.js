@@ -52,7 +52,7 @@ const Resume = () => {
             </div>
             <div className={style.shapes}>
                 <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="200" cy="200" r="195" stroke="#C03226" stroke-width="10" stroke-dasharray="50"/>
+                    <circle cx="200" cy="200" r="195" stroke="#C03226" strokeWidth="10" strokeDasharray="50"/>
                 </svg>
             </div>
         </Section>

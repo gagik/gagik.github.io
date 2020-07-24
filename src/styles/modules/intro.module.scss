@@ -42,27 +42,6 @@ $text-width:  460px;
 // Add semi-transperent background for 
 // mobile-friendliness
 @include nondesktop {
-    .content, .banner {
-        position: relative;
-        z-index: 10;
-        width: 100%;
-    }
-    $paddingX: 2 * $mobilePaddingX;
-    .logoText {
-        margin-left: $paddingX;
-    }
-    .logoIcon {
-        margin-right: $paddingX;
-    }
-    .introText {
-        width: 100%;
-        padding: $paddingX;
-        box-sizing: border-box;
-    }
-    .greeting {
-        width: 100%;
-        padding: 0px $paddingX;
-    }
     .section::after {
         content: '';
         position: absolute;
@@ -72,5 +51,25 @@ $text-width:  460px;
         height: 100%;
         background-color: $bg-dark-semi;
         z-index: 0;
+    }
+    .content, .banner, .section-heading {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+@include mobile {
+    .content {
+        width: 100%;
+        padding-top: 0px;
+    }
+    .introText {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 20px;
+    }
+    .greeting {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }

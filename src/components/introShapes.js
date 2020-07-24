@@ -4,7 +4,6 @@ import anime from 'animejs'
 class IntroShapes extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.className = props.className;
   }
   componentDidMount() {

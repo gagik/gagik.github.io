@@ -57,13 +57,29 @@ $cardShadow: 80px;
 }
 
 @include mobile {
+    .section {
+        padding-bottom: 0px;
+    }
     .cubeText p {
         padding:0px 40px;
     }
     .cubes {
-        margin: 0px 0px $cardShadow 0px;
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 0px;
     }
-    .cube {
-        padding: $paddingY 0px;
+    .cubeText {
+        position: relative;
+        padding: 50px 0px;
+        width: 100%;
+        height: auto;
+        margin: 0px;
+    }
+    .container {
+        padding: 0px;
+    }
+    .cubeBack {
+        display: none;
     }
 }

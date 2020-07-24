@@ -64,6 +64,21 @@ $text-width:  460px;
     float: left;
 }
 
+@include mobile {
+    $icon-m-height: 40px;
+    $text-m-height: 30px;
+    .logoText {
+        height:$text-m-height;
+        margin-top: $icon-m-height - $text-m-height;
+    }
+    .logoIcon {
+        height: $icon-m-height;
+    }
+    .banner {
+        padding-bottom: 50px;
+    }
+}
+
 $btnBorderY: 18px;
 
 a {

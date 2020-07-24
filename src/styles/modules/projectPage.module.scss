@@ -40,14 +40,28 @@
 
 .content a {
     text-decoration: underline;
+    color: $blonde;
 }
 
-.content h2, .content a, .content li::marker {
+.content h2,  .content a, .content li  {
     color: $blonde;
+}
+
+.content li p {
+    color: $white;
 }
 
 .content h2 {
     margin-top: 100px;
+}
+
+@include mobile {
+    .post h1 {
+        font-size: 30px;
+    }
+    .content {
+        font-size: 18px;
+    }
 }
 
 // .post .content p {

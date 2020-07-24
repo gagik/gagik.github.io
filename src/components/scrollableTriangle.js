@@ -79,7 +79,6 @@ class ScrollableTriangle extends React.Component {
         // this.setState({
         //   svgHeight: newHeight
         // });
-        console.log(target.heightEndpoint, newHeight, target.heightEndpoint - newHeight >= 0.1);
         if(Math.abs(target.heightEndpoint - newHeight) >= 1 && newHeight !== 0) {
             anime({
                 targets: "#contact_triangle",

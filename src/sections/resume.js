@@ -45,7 +45,7 @@ const Resume = () => {
                             title="Educational Award of the President of the Republic of Armenia in the IT Sphere"
                             description="The Presidential awards for IT are given to the top students 
                                          showing excellent achievements in their studies and research work."
-                            date="july - aug 2019"
+                            date="summer 2016"
                         />
                     </div>
                 </div>

@@ -28,7 +28,7 @@
 }
 
 .post .content {
-    font-size: 26px;   
+    font-size: $text-content-big;   
     line-height: 150%;
     padding-bottom: 100px;
 }
@@ -59,7 +59,7 @@
     .post h1 {
         font-size: 30px;
     }
-    .content {
+    .post .content {
         font-size: 18px;
     }
 }

@@ -45,12 +45,13 @@ $contentPadding: 30px;
 }
 
 .content h1 {
-    font-size: 24px;
+    font-size: $text-medium;
     font-weight: 600;
 }
 
 .content * {
     color: $black;
+    font-size: $text-content-small;
 }
 
 .content .description {

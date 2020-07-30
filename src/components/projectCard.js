@@ -9,10 +9,10 @@ const ProjectCard = (props) => {
         <div className={style.project + " " + bigger}>
                 <div className={style.thumbnail}>
                     <div className={style.duotone}>
-                         <Img fixed={props.duotone}/>
+                    <Link to={"/" + props.slug}><Img fixed={props.duotone}/></Link>
                     </div>
                 <div className={style.image}>
-                        <Img fixed={props.image}/>
+                    <Link to={"/" + props.slug}><Img fixed={props.image}/></Link>
                 </div>
                 </div>
                 <div className={style.content}>

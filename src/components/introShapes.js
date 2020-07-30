@@ -39,7 +39,7 @@ class IntroShapes extends Component {
   render() {
     return(
       <div className={this.className}>
-        <svg width="500" viewBox="0 0 457 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="420" viewBox="0 0 457 560" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect id="rect" x="450" y="400" width="380" height="380" transform="rotate(-45 120 275)" fill="#D9C299"/>
           <circle id="circle" cx="420" cy="275" r="160" stroke="#1A1D1C" strokeWidth="10"/>
           <circle id="dashes" cx="420" cy="275" r="160" stroke="#D9C299" strokeWidth="12" strokeDasharray="30"/>

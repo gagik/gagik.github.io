@@ -19,6 +19,15 @@ $containerPaddingX: 50px;
 /* Useful for some container-based fixed scaling */
 $containerWidth: $containerMaxWidth - 2 * $containerPaddingX;
 
+/* Text sizes */
+$text-medium: 24px;
+$text-header-big: 24px;
+$text-header: 22px;
+$text-header-small: 20px;
+$text-content-big: 20px;
+$text-content: 18px;
+$text-content-small: 15px;
+
 /* Responsive design shortcuts */
 
 $tablet-width: 768px;

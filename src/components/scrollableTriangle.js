@@ -1,7 +1,7 @@
 import React from 'react';
 import anime from 'animejs';
 
-let MAX_SVG_HEIGHT = 70;
+let MAX_SVG_HEIGHT = 86;
 const TOP_MARGIN = 40;
 
 class ScrollableTriangle extends React.Component {
@@ -11,7 +11,7 @@ class ScrollableTriangle extends React.Component {
         this.triangleSVG = React.createRef();
         this.state = {svgHeight: MAX_SVG_HEIGHT};
         this.heightEndpoint = MAX_SVG_HEIGHT;
-        MAX_SVG_HEIGHT = !props.amount ? MAX_SVG_HEIGHT : 12 * props.amount + TOP_MARGIN;
+        // MAX_SVG_HEIGHT = !props.amount ? MAX_SVG_HEIGHT : 12 * props.amount + TOP_MARGIN;
     }
     getPath(svgHeight) {
         const BOTTOM = MAX_SVG_HEIGHT;
@@ -45,10 +45,11 @@ class ScrollableTriangle extends React.Component {
         return path; 
     }
     componentDidMount() {
-        window.addEventListener('scroll', () => {this.handleScroll()});
+        // temporarily disable scrolling
+        // window.addEventListener('scroll', () => {this.handleScroll()});
     }
     componentWillUnmount() {
-        window.removeEventListener('scroll', () => {this.handleScroll()});
+        // window.removeEventListener('scroll', () => {this.handleScroll()});
     }
     handleScroll(_) {
         if (window === undefined) return;

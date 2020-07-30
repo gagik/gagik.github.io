@@ -26,7 +26,7 @@ const Footer = (props) => {
     return (
         <div className={style.footer + flipped}>
             <div className={style.logo}>
-                <img alt="Logo Icon" height="80px" src={icon}></img>
+                <img alt="Logo Icon" height="65px" src={icon}></img>
             </div>
             <div className="container">
             <div className={style.left}>

@@ -8,12 +8,12 @@
 }
 
 
-$text-width:  460px;
+$text-width:  380px;
 
 .greeting {
     width: $text-width;
     font-family: $font-gitunik;
-    font-size: 60px;
+    font-size: 54px;
     color: $red;
 }
 
@@ -23,15 +23,15 @@ $text-width:  460px;
 
 .introText {
     width: $text-width;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 140%;
 }
 
 .shapes {
     /* Width and heigth after 
        Intro Animation is completed. */
-    $animationCompleteX: -500px;
-    $animationCompleteY: -612px;
+    $animationCompleteX: -420px;
+    $animationCompleteY: -520px;
     position: absolute;
     top: 40%;
     left: 100%;

@@ -21,12 +21,18 @@ module.exports = {
     author: 'Gagik Amaryan',
     twitterUsername: "@gagikamaryan_",
     links: [
-      ['email', 'https://github.com/gagik/'],
+      // ['email', 'https://github.com/gagik/'],
       ['github', 'https://github.com/gagik/'],
       ['youtube', 'https://www.youtube.com/c/GagikAmaryan']
     ]
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-53913427-1",
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp', 

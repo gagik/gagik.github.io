@@ -68,7 +68,7 @@ const Intro = () => {
             <div id="projects" className="container">
                 <div className={style.sHeading + " section-heading"}>
                     <h4>projects</h4>
-                    <ScrollableTriangle amount={data.projects.nodes.length} className={style.triangle} />
+                    {/* <ScrollableTriangle amount={data.projects.nodes.length} className={style.triangle} /> */}
                 </div>
                 <div className={style.content + " section-content"}>
                     <h4>{pageInfo.projectIntro}</h4>

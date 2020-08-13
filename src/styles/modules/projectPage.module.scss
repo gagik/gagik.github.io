@@ -55,6 +55,23 @@
     margin-top: 100px;
 }
 
+.demo {
+    margin-bottom: 50px;
+    background-color: $text-gray;
+}
+
+.demo:after, .demo:before {
+    border-bottom-color: $text-gray;
+    border-top-color: $text-gray;
+}
+
+
+
+.more {
+    width: 240px;
+    margin-bottom: 50px;
+}
+
 @include mobile {
     .post h1 {
         font-size: 30px;

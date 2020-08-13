@@ -96,6 +96,8 @@ a {
     background: $blonde;
     color: $black;
     padding: 0px 40px;
+    text-align: center;
+    transition: background-color 0.2s;
 }
 
 
@@ -106,6 +108,7 @@ a {
     bottom: 100%;
     border-bottom: $btnBorderY solid $blonde;
     border-left: $btnBorderY solid transparent;
+    transition: border-bottom-color 0.2s;
 }
 .btn:after {
     bottom: auto;
@@ -115,6 +118,16 @@ a {
     border-bottom: none;
     border-right: $btnBorderY solid transparent;
     border-top: $btnBorderY solid $blonde;
+    transition: border-top-color 0.2s;
+}
+
+.btn:hover {
+    background-color: $red; 
+}
+
+.btn:hover::after, .btn:hover::before {
+    border-bottom-color: $red;
+    border-top-color: $red;
 }
 
 

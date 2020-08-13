@@ -6,9 +6,9 @@ import Header from './header';
 const Layout = (props) => {
     return (
         <div className="layout">
-            <div className="disclaimer">
+            {/* <div className="disclaimer">
                 <span><b>Note:</b> I just revamped my website and it is still being "tested" by users like you. I am eager to hear feedback!</span>
-            </div>
+            </div> */}
             <Header />
             {props.children}
             <Footer flipped={props.flipped} />

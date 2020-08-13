@@ -34,6 +34,8 @@ export const pageQuery = graphql`
             description {
                 description
             }
+            demoUrl
+            demoText
             thumbnail { 
                 localFile {
                     childImageSharp {
@@ -69,11 +71,20 @@ class ProjectPage extends React.Component {
                         <div className={style.content}>
                             {documentToReactComponents(post.content?.json, richText_render)}
                         </div>
-                        <Link to="/#projects">
-                            <span className="btn">
-                                See more projects
-                            </span>
-                        </Link>
+                        <div className={style.buttons}>
+                            {
+                                post.demoUrl && <a href={post.demoUrl}>
+                                    <div className={style.more + " btn " + style.demo}>
+                                        {post.demoText}
+                                    </div>
+                                </a>
+                            }
+                            <Link to="/#projects">
+                                <div className={style.more + " btn"}>
+                                    See more projects
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </Layout>

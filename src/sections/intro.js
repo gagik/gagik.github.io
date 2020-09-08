@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import IntroShapes from '../components/introShapes';
+import RadioOGG from "../assets/videos/radio.webm";
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 // const Text = ({ children }) => <p className="align-center">{children}</p>
@@ -41,9 +42,12 @@ const Intro = () => {
     return (
         <Section className={style.section}>
             <IntroShapes className={style.shapes} />
-            <div className="container">
-                <div className={"section-heading " + style.sectionHeading}>
-                    <h4>start</h4>
+            <div className={"container " + style.container}>
+                <div className={style.radio}>
+                    <video class={style.video} width="900px" autoplay="autoplay" muted>
+                        {/* TODO: either alternative video format or placeholder     */}
+                        <source src={RadioOGG} type="video/webm" />
+                    </video>
                 </div>
                 <div className={style.content + " section-content"}>
                     <h1 className={style.greeting}>Hello</h1>

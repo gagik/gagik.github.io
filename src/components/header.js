@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 const Header = (props) => {
     return (
-        <div id="banner" className="banner">
+        <div id="start" className="banner">
             <div className="container">
                 <Link to="/">
                     <img alt="Logo Icon" className="logoIcon" height="50px" src={logoIcon} />

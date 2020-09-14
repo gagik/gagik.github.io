@@ -13,6 +13,17 @@ const Text = ({ children }) => <p className="align-center">{children}</p>
 const richText_render = {
   renderMark: {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+    [MARKS.CODE]: code => {
+        let codeType = code[0];
+        switch(codeType) {
+            case "v":
+                let embedId = code.substring(3);
+                return (<iframe title="Project Video" src={"https://player.vimeo.com/video/" + embedId} width="640" height="360" 
+                frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>);
+            default:
+                return <Text>{code}</Text>
+        }
+    }
   },
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,

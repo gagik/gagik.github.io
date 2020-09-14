@@ -65,7 +65,10 @@
     border-top-color: $text-gray;
 }
 
-
+.content iframe {
+    width: 100%;
+    margin: 20px 0px;
+}
 
 .more {
     width: 240px;

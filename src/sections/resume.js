@@ -14,15 +14,24 @@ const Resume = () => {
                     <div className="section-content">
                     <CvItem 
                         style={style} 
-                        title="User Interface Design Intern · PeerPilot"
-                        description="Copenhagen, Denmark"
-                        date="feb - may 2020"
+                        title="Software Engineering Intern · MongoDB Inc."
+                        description={`New York, NY
+
+                        Work on dependency resolution features of the Realm backend-as-a-service cloud platform.
+                        
+                        // Go Language, React, REST`}
+                        date="jun - aug 2021"
                     />
                     <div className={style.seperator + " seperator"}></div>
                     <CvItem 
                         style={style} 
-                        title="Full Stack Development Intern · NoTraffic"
-                        description="Tel Aviv-Yafo, Israel"
+                        title="Software Engineering Intern · NoTraffic"
+                        description={`Tel Aviv-Yafo, Israel
+                        
+                        Developed web tools and applications for troubleshooting and analysis for a smart traffic light management company based in Tel Aviv.
+                        
+                        // Python (Django), Angular, Redux
+                        `}
                         date="july - aug 2019"
                     />
                 </div>
@@ -35,9 +44,11 @@ const Resume = () => {
                         <CvItem 
                             style={style} 
                             title="Martin A. Dale ‘53 Summer Award"
-                            description="Prestigious grant awarded to Princeton University
-                                         sophomores to engage in a project of strong personal value and merit."
-                            date="may 2020"
+                            description="The Dale Award enables a small number of Princeton University sophomores to 
+                                        pursue worthy projects that provide important opportunities for personal growth, 
+                                        foster independence, creativity, and leadership skills, and broaden or deepen some 
+                                        area of special interest."
+                            date="summer 2020"
                         />
                         <div className={style.seperator + " seperator"}></div>
                         <CvItem 

@@ -35,6 +35,7 @@ $cvSpacing: 40px;
 .cvItem .description {
     font-size: $text-content;
     color: $text-gray;
+    white-space: pre-line;
 }
 
 .cvItem .date {

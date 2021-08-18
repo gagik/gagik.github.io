@@ -33,7 +33,7 @@ const Footer = (props) => {
             </AnchorLink>
             <div className="container">
             <div className={style.left}>
-                © {new Date().getFullYear()} Gagik Amaryan
+                © {new Date().getFullYear()} Designed and Developed by Gagik Amaryan
             </div>
             <div className={style.right}>
                 {links}

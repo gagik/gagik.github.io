@@ -1,4 +1,4 @@
-@import '../variables';
+@import "../variables";
 
 $cardPaddingLeft: 75px;
 // Make this calculation more reasonable
@@ -11,160 +11,162 @@ $imageHeight: 400px;
 $contentPadding: 30px;
 
 .project {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin: 0px 0px 40px 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0px 0px 40px 0px;
 }
 .project:nth-child(even) {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .project:nth-child(even) .content {
-    padding-left: 0px;
-    padding-right: $contentPadding;
+  padding-left: 0px;
+  padding-right: $contentPadding;
 }
 
 .project .thumbnail {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .project .content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 0px 0px $contentPadding $contentPadding;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0px 0px $contentPadding $contentPadding;
 }
 
 .content {
-    width: 100%;
-    height: 300px;
+  width: 100%;
+  height: 300px;
 }
 
 .content h1 {
-    font-size: $text-medium;
-    font-weight: 600;
+  font-size: $text-medium;
+  font-weight: 600;
 }
 
 .content * {
-    color: $black;
-    font-size: $text-content-small;
+  color: $black;
+  font-size: $text-content-small;
 }
 
 .content .description {
-    line-height: 140%;
+  line-height: 140%;
 }
-.duotone, .image {
-    overflow: hidden;
-    width: $imageWidth;
-    height: $imageHeight;
-} 
+.duotone,
+.image {
+  overflow: hidden;
+  width: $imageWidth;
+  height: $imageHeight;
+}
 
 .image {
-    z-index: 0;
-    position: absolute;
-    top:0px;
-    left:0px;
-    opacity: 1;
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
 }
 
 .duotone {
-    position: relative;
-    z-index: 100;
-    transition: opacity 0.3s ease-in-out;
+  position: relative;
+  z-index: 100;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .duotone img {
-    margin: -2px 0px 0px -2px;
+  margin: -2px 0px 0px -2px;
 }
 
 .project:hover .duotone {
-    opacity: 0;
+  opacity: 0;
 }
 
 .project:hover h1 {
-    font-weight: $red;
+  font-weight: $red;
 }
 $actionWidth: 160px;
 $actionHeight: 50px;
 
 .actionWrapper {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: $actionWidth;
-    height: $actionHeight;
-    margin-left: calc(-1 * $actionWidth / 2);
-    margin-top: -$actionHeight - 50px;
-    overflow: hidden;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: $actionWidth;
+  height: $actionHeight;
+  margin-left: calc(-1 * $actionWidth / 2);
+  margin-top: -$actionHeight - 50px;
+  overflow: hidden;
 }
 
 .action {
-    width: $actionWidth;
-    height: $actionHeight;
+  width: $actionWidth;
+  height: $actionHeight;
 
-    text-align: center;
-    vertical-align: middle;
-    line-height: $actionHeight;
+  text-align: center;
+  vertical-align: middle;
+  line-height: $actionHeight;
 
-    cursor: pointer;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: $blonde;
-    background: $bg-dark;
-    transition: transform 0.15s ease-in, color 0.2s ease-in;
-    // transition: color 0.2s ease-in;
-    transform: translateY(100%);
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $blonde;
+  background: $bg-dark;
+  transition: transform 0.15s ease-in, color 0.2s ease-in;
+  // transition: color 0.2s ease-in;
+  transform: translateY(100%);
 }
 
 .action:hover {
-    color: $white;
+  color: $white;
 }
 
 .project:hover .action {
-    transform: translateY(0%);
+  transform: translateY(0%);
 }
 
 @include mobile {
-    .duotone {
-        display: none;
-    }
-    .actionWrapper {
-        position: static;
-        margin: 30px 0px;
-    }
-    .action, .project:hover .action {
-        transform: translateY(0%);
-    }
-    .action {
-        color: $white;
-    }
-    .project .thumbnail {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .project {
-        display: inline-block;
-        width: 100%;
-        margin: 0px;
-        vertical-align: top;
-        padding-top: 50px;
-    }
-    .project .content {
-        display: flex;
-        height: auto;
-        justify-content: center;
-        width: 100%;
-        padding: 0px !important;
-    }
-    .project .content div {
-        width: $imageWidth;
-    }
-    .image {
-        position: static;
-    }
+  .duotone {
+    display: none;
+  }
+  .actionWrapper {
+    position: static;
+    margin: 30px 0px;
+  }
+  .action,
+  .project:hover .action {
+    transform: translateY(0%);
+  }
+  .action {
+    color: $white;
+  }
+  .project .thumbnail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .project {
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    vertical-align: top;
+    padding-top: 50px;
+  }
+  .project .content {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+    padding: 0px !important;
+  }
+  .project .content div {
+    width: $imageWidth;
+  }
+  .image {
+    position: static;
+  }
 }

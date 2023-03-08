@@ -1,45 +1,45 @@
-@import '../variables';
+@import "../variables";
 
 .section {
-    padding: 170px 0px 0px 0px;
-    background: $blonde !important;
+  padding: 170px 0px 0px 0px;
+  background: $blonde !important;
 }
 
 .sectionHeading h4 {
-    color: $black;
+  color: $black;
 }
 
 .content {
-    padding-bottom: 250px;
+  padding-bottom: 250px;
 }
 
 .content h4 {
-    font-weight: normal;
-    font-size: $text-medium;   
-    margin-bottom: 100px;
+  font-weight: normal;
+  font-size: $text-medium;
+  margin-bottom: 100px;
 }
 
 .projects {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .triangle {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    left: -50px;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  left: -50px;
 }
 
 .triangle svg {
-    position: absolute;
-    top: 100%;
-    transform: translateY(-100%);
+  position: absolute;
+  top: 100%;
+  transform: translateY(-100%);
 }
 
 .sHeading {
-    height: 100%;
+  height: 100%;
 }

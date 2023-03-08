@@ -13,6 +13,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@contentful/rich-text-types": "^16.0.2",
     "animejs": "^3.2.1",
     "dotenv": "^16.0.3",
     "gatsby": "^5.7.0",
@@ -22,6 +23,7 @@
     "gatsby-source-contentful": "^8.7.0",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0",
@@ -33,6 +35,13 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "gh-pages": "^5.0.0"
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^5.0.0",
+    "prettier": "2.8.4"
   }
 }

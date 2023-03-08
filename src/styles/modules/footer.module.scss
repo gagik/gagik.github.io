@@ -1,57 +1,59 @@
-@import '../variables';
+@import "../variables";
 
 .footer {
-    padding: 150px 0px 50px 0px;
-    display: grid;
-    justify-items: center;
-    width: 100%;
+  padding: 150px 0px 50px 0px;
+  display: grid;
+  justify-items: center;
+  width: 100%;
 }
 
 .footer * {
-    font-size: $text-content-small;
-    color: $text-gray;
+  font-size: $text-content-small;
+  color: $text-gray;
 }
 
 .footer *:hover {
-    color: $blonde;
+  color: $blonde;
 }
 
 .footer .logo {
-    margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 .footer.flipped {
-    background: $red;
+  background: $red;
 }
 
 .footer.flipped * {
-    color: $black;
+  color: $black;
 }
 
-.footer .left, .footer .right {
-    display: inline-block;
-    width: 50%;
+.footer .left,
+.footer .right {
+  display: inline-block;
+  width: 50%;
 }
 
 .footer .right {
-    text-align: right;
+  text-align: right;
 }
 
 .footer a {
-    margin-left: 50px;
-    text-decoration: none !important;
+  margin-left: 50px;
+  text-decoration: none !important;
 }
 
 @include mobile {
-    .footer .right, .footer .left {
-        width: 100%;
-        text-align: center;
-        padding-bottom: 10px;
-    }
-    .footer .left {
-        padding-bottom: 30px;
-    }
-    .footer .right a {
-        margin: 25px;
-    }
+  .footer .right,
+  .footer .left {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .footer .left {
+    padding-bottom: 30px;
+  }
+  .footer .right a {
+    margin: 25px;
+  }
 }

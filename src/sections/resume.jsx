@@ -19,8 +19,8 @@ function Resume() {
 
                         Part of the Realm JavaScript/TypeScript team, helping facilitate the rewrite into the new C++ binding generator powered SDK
                         
-                        // TypeScript, React Native, C++Skills`}
-              date="jun - aug 2021"
+                        // TypeScript, React Native, C++`}
+              date="aug 2022 - current"
             />
             <div className={`${style.seperator} seperator`} />
             <CvItem
@@ -54,9 +54,16 @@ function Resume() {
           <div className="section-content">
             <CvItem
               style={style}
-              title="Martin A. Dale ‘53 Summer Award"
+              title="Outstanding Computer Science Independent Work Prize"
               description={'Awarded by the Computer Science department for my independent work project "Swipes to the masses: a swipe-based mobile application solution for receiving and distributing event information that expects binary feedback for physical communities".'}
-              date="summer 2020"
+              date="spring 2022"
+            />
+            <div className={`${style.seperator} seperator`} />
+            <CvItem
+              style={style}
+              title="Princeton Computer Science Service Award"
+              description="Awarded by the Computer Science department for creating applications to solve redundancies in campus technologies and for founding and leading the student organization working on these projects—the Hoagie Club."
+              date="spring 2022"
             />
             <div className={`${style.seperator} seperator`} />
             <CvItem

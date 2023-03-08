@@ -17,8 +17,8 @@ function LandingPage() {
   );
 }
 
-export function Head() {
-  return <SEO title="Home" />;
+export function Head({ location }) {
+  return <SEO title="Home" location={location} />;
 }
 
 export default LandingPage;

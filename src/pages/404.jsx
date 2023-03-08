@@ -20,8 +20,8 @@ function LandingPage() {
   );
 }
 
-export function Head() {
-  return <SEO title="Page not found" />;
+export function Head({ location }) {
+  return <SEO title="Page not found" location={location} />;
 }
 
 export default LandingPage;

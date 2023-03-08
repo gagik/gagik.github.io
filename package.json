@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "env-cmd -f .env.development gatsby build && gh-pages -d public -b master",
+    "deploy": "env-cmd -f .env gatsby build && gh-pages -d public -b master",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"

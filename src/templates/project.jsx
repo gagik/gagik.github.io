@@ -56,7 +56,6 @@ const richTextOptions = {
 function ProjectPage({ pageContext }) {
   const { post } = pageContext;
   const thumbnail = getImage(post.thumbnail.localFile);
-  console.log('thumbnail', thumbnail);
   return (
     <Layout>
       <div className={style.post}>
@@ -91,15 +90,15 @@ function ProjectPage({ pageContext }) {
   );
 }
 
-export function Head({ pageContext }) {
+export function Head({ pageContext, location }) {
   const { post } = pageContext;
-  console.log(post);
-  const thumbnailSrc = getSrc(post.thumbnail);
+  const thumbnailSrc = getSrc(post.thumbnail.localFile);
   return (
     <SEO
       title={post.name}
       description={post.description.description}
       image={thumbnailSrc}
+      location={location}
     />
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../components/section';
-import style from '../styles/modules/resume.module.scss';
+import * as style from '../styles/modules/resume.module.scss';
 import CvItem from '../components/cvItem';
 
 const Resume = () => {

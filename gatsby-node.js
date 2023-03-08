@@ -12,6 +12,28 @@ exports.createPages = ({graphql, actions}) => {
               node {
                 name
                 slug
+                description {
+                    description
+                }
+                demoUrl
+                demoText
+                thumbnail { 
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData
+                        }
+                    }
+                }
+                content {
+                    raw
+                    references {
+                        ... on ContentfulAsset {
+                          contentful_id
+                          __typename
+                          gatsbyImageData
+                        }
+                    }
+                }
               }
             }
           }
@@ -29,7 +51,8 @@ exports.createPages = ({graphql, actions}) => {
                 path: post.node.slug,
                 component: projectPost,
                 context: {
-                    slug: post.node.slug
+                    slug: post.node.slug,
+                    post: post.node,
                 }
             })
         });

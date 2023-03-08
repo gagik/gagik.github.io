@@ -97,7 +97,7 @@ $actionHeight: 50px;
     left: 50%;
     width: $actionWidth;
     height: $actionHeight;
-    margin-left: -$actionWidth/2;
+    margin-left: calc(-1 * $actionWidth / 2);
     margin-top: -$actionHeight - 50px;
     overflow: hidden;
 }

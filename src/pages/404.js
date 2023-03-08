@@ -5,21 +5,21 @@ import Resume from '../sections/resume';
 import Contact from '../sections/contact';
 import Intro from '../sections/intro';
 import SEO from '../components/SEO';
+import Section from '../components/section';
 
 const LandingPage = () => {
   return (
-    <Layout flipped={true}>
-        <Intro />
-        <Projects />
-        <Resume />
-        <Contact />
+    <Layout>
+        <Section>
+            <div style={{paddingLeft: 20, paddingRight: 20}}>Hmm, page not found. Maybe you can find what you were looking for through the&nbsp;<u><a href="/">home page</a></u>?</div>
+        </Section>
     </Layout>
   );
 };
 
 export function Head() {
   return <SEO 
-    title="Home"
+    title="Page not found"
     />
 }
 

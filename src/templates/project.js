@@ -1,16 +1,16 @@
 import React from 'react';
 import Layout from '../components/layout';
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import style from '../styles/modules/projectPage.module.scss';
-import Img from 'gatsby-image';
+import * as style from '../styles/modules/projectPage.module.scss';
 import SEO from '../components/SEO';
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
+import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => <p className="align-center">{children}</p>
 
-const richText_render = {
+const richTextOptions = {
   renderMark: {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
     [MARKS.CODE]: code => {
@@ -28,59 +28,30 @@ const richText_render = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        return <img alt="" className="img-fluid" src={node.data.target.fields.file['en-US'].url} />
+        const { gatsbyImageData } = node.data.target
+        if (!gatsbyImageData) {
+          return null
+        }
+        return <GatsbyImage image={gatsbyImageData} />  
     }
   },
 }
 
-export const pageQuery = graphql`
-    query ProjectPostBySlug ($slug: String!) {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-        contentfulProject (slug: {eq: $slug}) {
-            name
-            description {
-                description
-            }
-            demoUrl
-            demoText
-            thumbnail { 
-                localFile {
-                    childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
-            }
-            content {
-                json
-            }
-        }
-    } 
-`
+// See gatsby-node.js for the query that generates this page.
 
-class ProjectPage extends React.Component {
-    render() {
-        const post = this.props.data.contentfulProject;
-        const thumbnail = post.thumbnail.localFile.childImageSharp.fluid;
+const ProjectPage = ({ pageContext }) => {
+        const { post } = pageContext;
+        const thumbnail = getImage(post.thumbnail.localFile);
+        console.log("thumbnail", thumbnail)
         return (
             <Layout>
-                <SEO
-                    title={post.name}
-                    description={post.description.description}
-                    image={thumbnail.src}
-                />
                 <div className={style.post}>
                     <div className={"container " + style.container}>
                         <h1>{post.name}</h1>
                         <div className={style.description}>{post.description.description}</div>
-                        <Img alt="Thumbnail" className={style.thumbnail} fluid={thumbnail} /> 
+                        <GatsbyImage alt="Thumbnail" className={style.thumbnail} image={thumbnail} /> 
                         <div className={style.content}>
-                            {documentToReactComponents(post.content?.json, richText_render)}
+                            {renderRichText(post.content, richTextOptions)}
                         </div>
                         <div className={style.buttons}>
                             {
@@ -100,7 +71,17 @@ class ProjectPage extends React.Component {
                 </div>
             </Layout>
         );
-    }
-};
+    };
+
+export function Head({pageContext}) {
+    const { post } = pageContext;
+    console.log(post)
+    const thumbnailSrc = getSrc(post.thumbnail);
+    return <SEO
+        title={post.name}
+        description={post.description.description}
+        image={thumbnailSrc}
+    />
+  }
 
 export default ProjectPage;

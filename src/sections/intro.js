@@ -1,16 +1,16 @@
 import React from 'react';
 import Section from '../components/section';
-import style from '../styles/modules/intro.module.scss';
+import * as style from '../styles/modules/intro.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import IntroShapes from '../components/introShapes';
 import RadioOGG from "../assets/videos/radio.webm";
+import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 // const Text = ({ children }) => <p className="align-center">{children}</p>
 
-const richText_render = {
+const richTextOptions = {
     renderMark: {
       [MARKS.BOLD]: text => <Bold>{text}</Bold>,
     },
@@ -29,10 +29,10 @@ const Intro = () => {
             allContentfulIntro {
             nodes {
                 contactText {
-                    json
+                    raw
                 }
                 introText {
-                    json
+                    raw
                 }
                 projectIntro
             }
@@ -52,7 +52,7 @@ const Intro = () => {
                 <div className={style.content + " section-content"}>
                     <h1 className={style.greeting}>Hello</h1>
                     <div className={style.introText}>
-                    {documentToReactComponents(data.introText.json, richText_render)}
+                    {renderRichText(data.introText, richTextOptions)}
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../styles/modules/footer.module.scss';
+import * as style from '../styles/modules/footer.module.scss';
 import icon_black from '../assets/logo/icon_black.svg';
 import icon_white from '../assets/logo/icon_white.svg';
 import { graphql, useStaticQuery } from 'gatsby';

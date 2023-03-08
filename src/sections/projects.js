@@ -1,64 +1,65 @@
 import React from 'react';
 import Section from '../components/section';
-import style from '../styles/modules/projects.module.scss';
+import * as style from '../styles/modules/projects.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 import ProjectCard from '../components/projectCard';
 import ScrollableTriangle from '../components/scrollableTriangle';
+import { getImage } from 'gatsby-plugin-image';
 
 
 const Intro = () => {
     let data = useStaticQuery(graphql`
-        query {
-            pageInfo: allContentfulIntro {
+    query {
+        pageInfo: allContentfulIntro {
             nodes {
-                contactText {
-                    json
-                }
-                introText {
-                    json
-                }
-                projectIntro
+            projectIntro
             }
         }
-            projects: allContentfulProject(
-                filter:{featured:{eq:true}}
-                sort:{fields:[order], order:ASC})
-                  {
-                   nodes {
-                    longName
-                    big
-                    slug
-                    description {
-                        description
-                    }
-                    banner {
-                        localFile {
-                            childImageSharp {
-                                duotone: fixed(
-                                    width: 284, height: 404,
-                                    duotone: { highlight: "#D9C299", shadow: "#1A1D1C"}
-                                ) {
-                                ...GatsbyImageSharpFixed
-                                }
-                                image: fixed(
-                                    width: 280, height: 400
-                                ) {
-                                ...GatsbyImageSharpFixed
-                                }
-                        }
-                    }
-                  }
-                } 
-              }
-    }
+        projects: allContentfulProject(
+            filter: {featured: {eq: true}}
+            sort: {order: ASC}
+        ) {
+            nodes {
+            longName
+            big
+            slug
+            description {
+                description
+            }
+            banner {
+                duotone: localFile {
+                childImageSharp {
+                    gatsbyImageData(
+                    width: 284
+                    height: 404
+                    layout: FIXED
+                    placeholder: BLURRED
+                    transformOptions: {duotone: {highlight: "#D9C299", shadow: "#1A1D1C"}}
+                    )
+                }
+                }
+                image: localFile {
+                childImageSharp {
+                    gatsbyImageData(
+                    width: 280
+                    height: 400
+                    layout: FIXED
+                    placeholder: BLURRED
+                    )
+                }
+                }
+            }
+            }
+        }
+        }
     `);
     const pageInfo = data.pageInfo.nodes[0];
     const projects = data.projects.nodes.map((node, i) => <ProjectCard 
         title={node.longName}
         letter={node.letter}
         description={node.description.description}
-        duotone={node.banner.localFile.childImageSharp.duotone}
-        image={node.banner.localFile.childImageSharp.image}
+        duotone={getImage(node.banner.duotone)}
+        image={getImage(node.banner.image)}
         slug={node.slug}
         big={node.big}
         key={i}

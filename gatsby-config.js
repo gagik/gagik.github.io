@@ -21,7 +21,6 @@ module.exports = {
     author: 'Gagik Amaryan',
     twitterUsername: "@gagikamaryan_",
     links: [
-      // ['email', 'https://github.com/gagik/'],
       ['github', 'https://github.com/gagik/'],
       ['youtube', 'https://www.youtube.com/c/GagikAmaryan']
     ]
@@ -33,9 +32,8 @@ module.exports = {
         trackingId: "UA-53913427-1",
       },
     },
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-image',
     'gatsby-plugin-sass',
-    'gatsby-transformer-sharp', 
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -57,8 +55,11 @@ module.exports = {
         useMozJpeg: false,
         stripMetadata: true,
         defaultQuality: 75,
-        downloadLocal: true,
+        defaults: {
+          placeholder: `blurred`,
+        },
       },
     },
+    'gatsby-transformer-sharp', 
 ],
 }

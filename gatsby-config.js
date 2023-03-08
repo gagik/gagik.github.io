@@ -14,32 +14,30 @@ module.exports = {
   siteMetadata: {
     title: 'Gagik Amaryan',
     titleTemplate: '%s - Gagik Amaryan',
-    description: 
+    description:
       'I combine art, design, and technology to make cool and meaningful projects.',
-    url: 'https://www.gagikamaryan.com',
-    image: "/thumbnail.jpg",
+    url: 'https://gagik.co',
+    image: '/thumbnail.jpg',
     author: 'Gagik Amaryan',
-    twitterUsername: "@gagikamaryan_",
+    twitterUsername: '@gagikamaryan_',
     links: [
-      // ['email', 'https://github.com/gagik/'],
       ['github', 'https://github.com/gagik/'],
-      ['youtube', 'https://www.youtube.com/c/GagikAmaryan']
-    ]
+      ['youtube', 'https://www.youtube.com/c/GagikAmaryan'],
+    ],
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-53913427-1",
+        trackingId: 'UA-53913427-1',
       },
     },
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-image',
     'gatsby-plugin-sass',
-    'gatsby-transformer-sharp', 
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `assets`,
+        name: 'assets',
         path: `${__dirname}/src/assets/`,
       },
     },
@@ -49,16 +47,19 @@ module.exports = {
         spaceId: 'qmoyvcam2b9j',
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
-      }
+      },
     },
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
         useMozJpeg: false,
         stripMetadata: true,
         defaultQuality: 75,
-        downloadLocal: true,
+        defaults: {
+          placeholder: 'blurred',
+        },
       },
     },
-],
-}
+    'gatsby-transformer-sharp',
+  ],
+};

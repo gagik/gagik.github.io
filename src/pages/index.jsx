@@ -6,18 +6,19 @@ import Contact from '../sections/contact';
 import Intro from '../sections/intro';
 import SEO from '../components/SEO';
 
-const LandingPage = () => {
+function LandingPage() {
   return (
-    <Layout flipped={true}>
-        <SEO 
-          title="Home"
-        />
-        <Intro />
-        <Projects />
-        <Resume />
-        <Contact />
+    <Layout flipped>
+      <Intro />
+      <Projects />
+      <Resume />
+      <Contact />
     </Layout>
   );
-};
+}
+
+export function Head({ location }) {
+  return <SEO title="Home" location={location} />;
+}
 
 export default LandingPage;

@@ -1,87 +1,90 @@
-@import '../variables';
+@import "../variables";
 
 .post {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .post .container {
-    max-width: 900px
+  max-width: 900px;
 }
 
 .post h1 {
-    font-weight: bold;
-    font-size: 40px;
-    margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 .post .thumbnail {
-    width: 100%;
-    margin-bottom: 30px;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .post .description {
-    margin-bottom: 30px;
-    color: $text-gray;
-    font-size: 20px;
+  margin-bottom: 30px;
+  color: $text-gray;
+  font-size: 20px;
 }
 
 .post .content {
-    font-size: $text-content-big;   
-    line-height: 150%;
-    padding-bottom: 100px;
+  font-size: $text-content-big;
+  line-height: 150%;
+  padding-bottom: 100px;
 }
 
 .content span {
-    font-weight: 700;
-    color: #949494;
+  font-weight: 700;
+  color: #949494;
 }
 
 .content a {
-    text-decoration: underline;
-    color: $blonde;
+  text-decoration: underline;
+  color: $blonde;
 }
 
-.content h2,  .content a, .content li  {
-    color: $blonde;
+.content h2,
+.content a,
+.content li {
+  color: $blonde;
 }
 
 .content li p {
-    color: $white;
+  color: $white;
 }
 
 .content h2 {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .demo {
-    margin-bottom: 50px;
-    background-color: $text-gray;
+  margin-bottom: 50px;
+  background-color: $text-gray;
 }
 
-.demo:after, .demo:before {
-    border-bottom-color: $text-gray;
-    border-top-color: $text-gray;
+.demo:after,
+.demo:before {
+  border-bottom-color: $text-gray;
+  border-top-color: $text-gray;
 }
 
 .content iframe {
-    width: 100%;
-    margin: 20px 0px;
+  width: 100%;
+  margin: 20px 0px;
 }
 
 .more {
-    width: 240px;
-    margin-bottom: 50px;
+  width: 240px;
+  margin-bottom: 50px;
 }
 
 @include mobile {
-    .post h1 {
-        font-size: 30px;
-    }
-    .post .content {
-        font-size: 18px;
-    }
+  .post h1 {
+    font-size: 30px;
+  }
+  .post .content {
+    font-size: 18px;
+  }
 }
 
 // .post .content p {
